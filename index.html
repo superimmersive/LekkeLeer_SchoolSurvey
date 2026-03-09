@@ -470,6 +470,116 @@
     .options.grid-2 { grid-template-columns: 1fr; }
     .hero { padding: 40px 20px 60px; }
   }
+
+  /* ── Video Section ── */
+  .video-section {
+    background: linear-gradient(180deg, #0B1F3A 0%, #0f2847 100%);
+    padding: 48px 24px 56px;
+  }
+  .video-section-label {
+    text-align: center;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #3B9ED4;
+    margin-bottom: 10px;
+  }
+  .video-section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.4rem, 3.5vw, 2rem);
+    color: white;
+    text-align: center;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  .video-section-sub {
+    text-align: center;
+    color: rgba(255,255,255,0.5);
+    font-size: 0.88rem;
+    margin-bottom: 36px;
+    font-weight: 300;
+  }
+  .video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1060px;
+    margin: 0 auto;
+  }
+  .video-card {
+    border-radius: 16px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .video-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+  }
+  .video-chip {
+    padding: 10px 16px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 0.5px;
+    background: rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .video-chip .dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: #1EB980;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+  .video-embed-wrap {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+  }
+  .video-embed-wrap iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: none;
+  }
+  .video-cta {
+    text-align: center;
+    margin-top: 32px;
+  }
+  .video-cta p {
+    color: rgba(255,255,255,0.5);
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+    font-weight: 300;
+  }
+  .scroll-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    background: linear-gradient(135deg, #1EB980, #0e9065);
+    color: white;
+    border: none;
+    border-radius: 99px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(30,185,128,0.35);
+    transition: all 0.2s;
+  }
+  .scroll-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(30,185,128,0.45); }
+
 </style>
 </head>
 <body>
@@ -489,6 +599,39 @@
     <div class="hero-stat"><div class="hero-stat-val">6</div><div class="hero-stat-lbl">Questions</div></div>
     <div class="hero-stat"><div class="hero-stat-val">~2 min</div><div class="hero-stat-lbl">To complete</div></div>
     <div class="hero-stat"><div class="hero-stat-val">100%</div><div class="hero-stat-lbl">Confidential</div></div>
+  </div>
+</section>
+
+<!-- Video Section -->
+<section class="video-section">
+  <div class="video-section-label">See It In Action</div>
+  <h2 class="video-section-title">Watch LekkeLeer Come to Life</h2>
+  <p class="video-section-sub">Real demos — QR code scanning, flashcards, spelling practice and times tables.</p>
+  <div class="video-grid">
+    <div class="video-card">
+      <div class="video-chip"><span class="dot"></span>🇿🇦 Afrikaans Spellys</div>
+      <div class="video-embed-wrap">
+        <iframe src="https://drive.google.com/file/d/10GCYqd-GLP6t2nt3fCqlJYQ6UksAXHXE/preview" allow="autoplay" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="video-card">
+      <div class="video-chip"><span class="dot"></span>🇬🇧 English Spelling</div>
+      <div class="video-embed-wrap">
+        <iframe src="https://drive.google.com/file/d/1T3u5bjkEzoRKb6ntKH_5iG103E9-wjyl/preview" allow="autoplay" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="video-card">
+      <div class="video-chip"><span class="dot"></span>✖️ Times Tables</div>
+      <div class="video-embed-wrap">
+        <iframe src="https://drive.google.com/file/d/1LrzCUWb_tsbP3Zm7jG-rhccX9oclIFpC/preview" allow="autoplay" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+  <div class="video-cta">
+    <p>Impressed? Help us shape the product for your school.</p>
+    <button class="scroll-btn" onclick="document.getElementById('surveyMain').scrollIntoView({behavior:'smooth'})">
+      Take the 2-Minute Survey ↓
+    </button>
   </div>
 </section>
 
